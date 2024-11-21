@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace MyFunctionApp
 {
@@ -24,7 +25,8 @@ namespace MyFunctionApp
 
         private class ResponseDto
         {
-            [JsonProperty("responseType")]
+            [JsonProperty("usesNewtonsoftJson")]
+            [JsonPropertyName("usesSystemTextJsonSerialization")]
             public required string Name { get; set; }
         }
     }
